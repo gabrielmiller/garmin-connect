@@ -20,6 +20,8 @@ const activity = (id) => `${ACTIVITY_SERVICE}/activity/${id}`;
 
 const activityDetails = (id) => `${activity(id)}/details`;
 
+const activitySplits = (id) => `${activity(id)}/splits`;
+
 const activities = () => `${ACTIVITYLIST_SERVICE}/activities/search/activities`;
 
 const dailyHeartRate = (userHash) => `${WELLNESS_SERVICE}/wellness/dailyHeartRate/${userHash}`;
@@ -69,6 +71,7 @@ module.exports = {
     WORKOUT_SERVICE,
     activity,
     activityDetails,
+    activitySplits,
     activities,
     dailyHeartRate,
     dailySleep,

@@ -175,6 +175,21 @@ class GarminConnect {
     }
 
     /**
+     * Get splits of an activity
+     * @param activity
+     * @param maxChartSize
+     * @param maxPolylineSize
+     * @returns {Promise<*>}
+     */
+    async getActivitySplits(activity, maxChartSize, maxPolylineSize) {
+        const { activityId } = activity || {};
+        if (activityId) {
+            return this.get(urls.activitySplits(activityId), { maxChartSize, maxPolylineSize });
+        }
+        return Promise.reject();
+    }
+
+    /**
      * Updates an activity
      * @param activity
      * @returns {Promise<*>}
